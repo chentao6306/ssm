@@ -186,6 +186,7 @@
     <form action="${pageContext.request.contextPath}/user/select_user" method="get">
         <input type="text" name="account" placeholder="输入账号进行搜索">
         <input type="submit" value="搜索">
+        <a href="${pageContext.request.contextPath}/user/">返回主页</a>
     </form>
 </div>
 
