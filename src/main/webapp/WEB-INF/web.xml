@@ -4,6 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!-- 启动页面 -->
+    <welcome-file-list>
+        <welcome-file>Project_declaration_list.jsp</welcome-file>
+    </welcome-file-list>
+
     <!--  设置编码  -->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>

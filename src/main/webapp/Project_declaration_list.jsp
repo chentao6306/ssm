@@ -10,6 +10,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <%
+    // 获取session
+    Object research_projects = session.getAttribute("research_projects");
+
+    // 如果session为空则重定向到后台请求中
+    if (research_projects == null){
+      response.sendRedirect("http://localhost/Scientific_research_project/declare_list");
+    }
+  %>
   <meta charset="UTF-8">
   <title>高校科研管理系统</title>
   <style>
