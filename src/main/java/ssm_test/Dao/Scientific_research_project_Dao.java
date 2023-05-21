@@ -14,7 +14,7 @@ public interface Scientific_research_project_Dao {
      * 科研项目申报 insert操作
      * @return
      */
-    @Insert("insert into research_projects values (null, #{project_number}, #{project_name}, #{project_leader}, #{category}, #{subject}, #{budget}, #{start_date}, #{end_date}, #{application_file}, #{approval_status}, #{reporting_of_results})")
+    @Insert("insert into research_projects values (null, #{project_number}, #{project_name}, #{project_leader}, #{category}, #{subject}, #{budget}, #{start_date}, #{end_date}, #{application_file}, #{approval_status}, '无', #{reporting_of_results})")
     int declare(@Param("project_number") String project_number, @Param("project_name") String project_name, @Param("project_leader") String project_leader, @Param("category") String category, @Param("subject") String subject, @Param("budget") float budget, @Param("start_date") String start_date, @Param("end_date") String end_date, @Param("application_file") byte[] application_file, @Param("approval_status") String approval_status, @Param("reporting_of_results") String reporting_of_results);
 
     /**

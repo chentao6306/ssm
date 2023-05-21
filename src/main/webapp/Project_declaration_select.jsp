@@ -177,7 +177,7 @@
         <li>
             <a href="#">科研项目成果</a>
             <ul class="submenu">
-                <li><a href="#">专利管理</a></li>
+                <li><a href="Patent_administration.jsp">专利管理</a></li>
                 <li><a href="#">论文管理</a></li>
                 <li><a href="#">著作权管理</a></li>
                 <li><a href="#">奖项管理</a></li>

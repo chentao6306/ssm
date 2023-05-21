@@ -7,7 +7,6 @@ import java.util.Date;
  */
 public class Research_projects {
     /**
-     * // 科研项目申报表
      * CREATE TABLE research_projects (
      *   id INT PRIMARY KEY AUTO_INCREMENT,
      *   project_number VARCHAR(50) NOT NULL,
@@ -20,6 +19,7 @@ public class Research_projects {
      *   end_date DATE NOT NULL,
      *   application_file LONGBLOB NOT NULL,
      *   approval_status VARCHAR(5) NOT NULL,
+     *   Patent_number VARCHAR(100),
      *   reporting_of_results VARCHAR(255)
      * );
      */
@@ -54,6 +54,9 @@ public class Research_projects {
 
     // 项目审批状态
     private String approval_status;
+
+    // 专利号
+    private String Patent_number;
 
     // 成果汇报
     private String reporting_of_results;
@@ -144,6 +147,14 @@ public class Research_projects {
 
     public void setApproval_status(String approval_status) {
         this.approval_status = approval_status;
+    }
+
+    public String getPatent_number() {
+        return Patent_number;
+    }
+
+    public void setPatent_number(String patent_number) {
+        Patent_number = patent_number;
     }
 
     public String getReporting_of_results() {

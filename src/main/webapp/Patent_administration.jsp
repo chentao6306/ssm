@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 27757
-  Date: 2023/5/19
-  Time: 19:31
+  Date: 2023/5/21
+  Time: 9:11
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -10,15 +10,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%
-    // 获取session
-    Object research_projects = session.getAttribute("research_projects");
-
-    // 如果session为空则重定向到后台请求中
-    if (research_projects == null){
-      response.sendRedirect("http://localhost/Scientific_research_project/declare_list");
-    }
-  %>
   <meta charset="UTF-8">
   <title>高校科研管理系统</title>
   <style>
@@ -177,16 +168,12 @@
       <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_list">科研项目</a>
       <ul class="submenu">
         <li><a href="Project_declaration.jsp">申报</a></li>
-        <%--        <li><a href="#">审核</a></li>--%>
-        <%--        <li><a href="#">合同签订</a></li>--%>
-        <%--        <li><a href="#">经费管理</a></li>--%>
-<%--        <li><a href="#">成果汇报</a></li>--%>
       </ul>
     </li>
     <li>
       <a href="#">科研项目成果</a>
       <ul class="submenu">
-        <li><a href="${pageContext.request.contextPath}/Scientific_research_project/Patent_administration">专利管理</a></li>
+        <li><a href="#">专利管理</a></li>
         <li><a href="#">论文管理</a></li>
         <li><a href="#">著作权管理</a></li>
         <li><a href="#">奖项管理</a></li>
@@ -207,7 +194,7 @@
 <main>
   <!-- 用户管理功能 -->
   <section id="user-management">
-    <h2>科研项目管理</h2>
+    <h2>专利管理</h2>
     <!-- 用户管理相关内容 -->
     <table>
       <tr>
@@ -218,35 +205,24 @@
         <th>申请类别</th>
         <th>学科分类</th>
         <th>预算经费</th>
-        <th>开始时间</th>
-        <th>结束时间</th>
-        <th>申请书</th>
-        <th>审批状态</th>
         <th>成果汇报</th>
+        <th>专利号</th>
         <th>操作</th>
       </tr>
-      <c:forEach items="${research_projects}" var="research" varStatus="s">
+      <c:forEach items="${research_projects}" var="research_" varStatus="s">
         <tr>
-          <td>${research.id}</td>
-          <td>${research.project_number}</td>
-          <td>${research.project_name}</td>
-          <td>${research.project_leader}</td>
-          <td>${research.category}</td>
-          <td>${research.subject}</td>
-          <td>${research.budget}</td>
-          <td>${research.start_date}</td>
-          <td>${research.end_date}</td>
-          <td>
-              <%--              <img src="data:image/jpeg;base64,${ImageUtils.convertImageToBase64(research.application_file)}" alt="img">--%>
-            <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_img_download?id=${research.id}">下载</a>
-          </td>
-          <td>${research.approval_status}</td>
-
-          <td>${research.reporting_of_results}</td>
+          <td>${research_.id}</td>
+          <td>${research_.project_number}</td>
+          <td>${research_.project_name}</td>
+          <td>${research_.project_leader}</td>
+          <td>${research_.category}</td>
+          <td>${research_.subject}</td>
+          <td>${research_.budget}</td>
+          <td>${research_.reporting_of_results}</td>
+          <td>${research_.patent_number}</td>
           <td>
             <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_find_by_id?id=${research.id}" class="button">编辑</a>
             <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_delete?id=${research.id}" class="button">删除</a>
-<%--            <a class="button">成果汇报</a>--%>
           </td>
         </tr>
       </c:forEach>

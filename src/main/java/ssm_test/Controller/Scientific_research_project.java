@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 import ssm_test.Dao.Scientific_research_project_Dao;
 import ssm_test.Entity.Research_projects;
 import ssm_test.Service.Scientific_research_project_service;
@@ -200,6 +201,23 @@ public class Scientific_research_project {
 
         return null;
     }
+
+    /**
+     * 专利管理
+     * @return
+     */
+    @GetMapping("/Patent_administration")
+    public ModelAndView Patent_administration(){
+        List<Research_projects> research_projects = scientific_research_project_service.declare_list();
+        ModelAndView modelAndView = new ModelAndView("/Patent_administration.jsp"); // 指定要返回的JSP页面名称
+
+        modelAndView.addObject("research_projects", research_projects); // 设置数据到ModelAndView对象
+
+        return modelAndView;
+    }
+
+
+
 
 
 
