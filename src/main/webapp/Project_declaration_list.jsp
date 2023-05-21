@@ -180,7 +180,7 @@
         <%--        <li><a href="#">审核</a></li>--%>
         <%--        <li><a href="#">合同签订</a></li>--%>
         <%--        <li><a href="#">经费管理</a></li>--%>
-        <li><a href="#">成果汇报</a></li>
+<%--        <li><a href="#">成果汇报</a></li>--%>
       </ul>
     </li>
     <li>
@@ -222,6 +222,7 @@
         <th>结束时间</th>
         <th>申请书</th>
         <th>审批状态</th>
+        <th>成果汇报</th>
         <th>操作</th>
       </tr>
       <c:forEach items="${research_projects}" var="research" varStatus="s">
@@ -240,9 +241,12 @@
             <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_img_download?id=${research.id}">下载</a>
           </td>
           <td>${research.approval_status}</td>
+
+          <td>${research.reporting_of_results}</td>
           <td>
             <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_find_by_id?id=${research.id}" class="button">编辑</a>
             <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_delete?id=${research.id}" class="button">删除</a>
+<%--            <a class="button">成果汇报</a>--%>
           </td>
         </tr>
       </c:forEach>

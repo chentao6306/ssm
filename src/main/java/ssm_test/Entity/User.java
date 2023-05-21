@@ -5,12 +5,14 @@ package ssm_test.Entity;
  */
 public class User {
     /**
-     * CREATE TABLE user (
-     *     id INT AUTO_INCREMENT PRIMARY KEY,
-     *     account VARCHAR(255) NOT NULL,
-     *     password VARCHAR(255) NOT NULL,
-     *     role ENUM('教师', '研究生', '管理员') NOT NULL
-     * );
+     * 用户表
+     * CREATE TABLE `user` (
+     *   `id` int(11) NOT NULL AUTO_INCREMENT,
+     *   `account` varchar(255) NOT NULL,
+     *   `password` varchar(255) NOT NULL,
+     *   `role` varchar(25) NOT NULL,
+     *   PRIMARY KEY (`id`)
+     * )
      */
     //id
     private int id;

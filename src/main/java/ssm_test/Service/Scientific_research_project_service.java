@@ -12,7 +12,7 @@ public interface Scientific_research_project_service {
      * 科研项目申报 insert操作
      * @return
      */
-    int declare(String project_number, String project_name, String project_leader, String category, String subject, float budget, String start_date, String end_date, byte[] application_file, String approval_status);
+    int declare(String project_number, String project_name, String project_leader, String category, String subject, float budget, String start_date, String end_date, byte[] application_file, String approval_status, String reporting_of_results);
 
     /**
      * 查看所有已经申报的数据
@@ -42,7 +42,7 @@ public interface Scientific_research_project_service {
      * @param approval_status
      * @return
      */
-    int declare_edit(int id, String project_number, String project_name, String project_leader, String category, String subject, float budget, String start_date, String end_date, byte[] application_file, String approval_status);
+    int declare_edit(int id, String project_number, String project_name, String project_leader, String category, String subject, float budget, String start_date, String end_date, byte[] application_file, String approval_status, String reporting_of_results);
 
     /**
      * 删除已经申报的数据

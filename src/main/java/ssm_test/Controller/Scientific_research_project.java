@@ -48,11 +48,11 @@ public class Scientific_research_project {
      * @throws IOException
      */
     @PostMapping("/declare")
-    public String declare(@RequestParam("project_number") String project_number, @RequestParam("project_name") String project_name, @RequestParam("project_leader") String project_leader, @RequestParam("category") String category, @RequestParam("subject") String subject, @RequestParam("budget") float budget, @RequestParam("start_date") String start_date, @RequestParam("end_date") String end_date, @RequestParam("application_file") MultipartFile application_file, @RequestParam("approval_status") String approval_status) throws IOException {
+    public String declare(@RequestParam("project_number") String project_number, @RequestParam("project_name") String project_name, @RequestParam("project_leader") String project_leader, @RequestParam("category") String category, @RequestParam("subject") String subject, @RequestParam("budget") float budget, @RequestParam("start_date") String start_date, @RequestParam("end_date") String end_date, @RequestParam("application_file") MultipartFile application_file, @RequestParam("approval_status") String approval_status, @RequestParam("reporting_of_results") String reporting_of_results) throws IOException {
 
         if (!application_file.isEmpty()){
             byte[] application_fileBytes = application_file.getBytes();
-            int declare = scientific_research_project_service.declare(project_number,project_name,project_leader,category,subject, Float.parseFloat(String.valueOf(budget)),start_date,end_date,application_fileBytes,approval_status);
+            int declare = scientific_research_project_service.declare(project_number,project_name,project_leader,category,subject, Float.parseFloat(String.valueOf(budget)),start_date,end_date,application_fileBytes,approval_status,reporting_of_results);
 
             if (declare >= 1){
                 System.out.println("申报成功");
@@ -118,6 +118,7 @@ public class Scientific_research_project {
     @GetMapping("/declare_find_by_id")
     public String declare_find_by_id(int id, HttpSession session){
         Research_projects by_id_research_projects = scientific_research_project_service.find_by_id_research_projects(id);
+        System.out.println(by_id_research_projects.getReporting_of_results());
         session.setAttribute("by_id_research_projects",by_id_research_projects);
         return "redirect:/Project_declaration_edit.jsp";
     }
@@ -138,11 +139,11 @@ public class Scientific_research_project {
      * @return
      */
     @PostMapping("/declare_edit")
-    public String declare_edit(@RequestParam("id") int id, @RequestParam("project_number") String project_number, @RequestParam("project_name") String project_name, @RequestParam("project_leader") String project_leader, @RequestParam("category") String category, @RequestParam("subject") String subject, @RequestParam("budget") float budget, @RequestParam("start_date") String start_date, @RequestParam("end_date") String end_date, @RequestParam("application_file") MultipartFile application_file, @RequestParam("approval_status") String approval_status) throws IOException {
+    public String declare_edit(@RequestParam("id") int id, @RequestParam("project_number") String project_number, @RequestParam("project_name") String project_name, @RequestParam("project_leader") String project_leader, @RequestParam("category") String category, @RequestParam("subject") String subject, @RequestParam("budget") float budget, @RequestParam("start_date") String start_date, @RequestParam("end_date") String end_date, @RequestParam("application_file") MultipartFile application_file, @RequestParam("approval_status") String approval_status, @RequestParam("reporting_of_results") String reporting_of_results) throws IOException {
         if (!application_file.isEmpty()){
             byte[] application_file_byte = application_file.getBytes();
 
-            int i = scientific_research_project_service.declare_edit(id,project_number, project_name, project_leader, category, subject, budget, start_date, end_date, application_file_byte, approval_status);
+            int i = scientific_research_project_service.declare_edit(id,project_number, project_name, project_leader, category, subject, budget, start_date, end_date, application_file_byte, approval_status,reporting_of_results);
             if (i >= 1){
 //                System.out.println("修改申报成功");
                 return "redirect:/Scientific_research_project/declare_list";
@@ -186,6 +187,20 @@ public class Scientific_research_project {
 
         return "redirect:/Project_declaration_select.jsp";
     }
+
+    /**
+     * 成果汇报
+     * @param
+     * @return
+     */
+    @GetMapping("/Reporting_on_results")
+    public String Reporting_on_results(int id){
+        Research_projects by_id_research_projects = scientific_research_project_service.find_by_id_research_projects(id);
+        System.out.println(by_id_research_projects.getProject_name());
+
+        return null;
+    }
+
 
 
 }

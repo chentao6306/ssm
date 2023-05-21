@@ -25,9 +25,9 @@ public class Scientific_research_project_service_Impl implements Scientific_rese
      * @return
      */
     @Override
-    public int declare(String project_number, String project_name, String project_leader, String category, String subject, float budget, String start_date, String end_date, byte[] application_file, String approval_status) {
+    public int declare(String project_number, String project_name, String project_leader, String category, String subject, float budget, String start_date, String end_date, byte[] application_file, String approval_status, String reporting_of_results) {
         //at ssm_test.Service.Impl.Scientific_research_project_service_Impl.declare(Scientific_research_project_service_Impl.java:35)
-        return scientific_research_project_dao.declare(project_number,project_name,project_leader,category,subject,budget,start_date,end_date,application_file,approval_status);
+        return scientific_research_project_dao.declare(project_number,project_name,project_leader,category,subject,budget,start_date,end_date,application_file,approval_status,reporting_of_results);
     }
 
     /**
@@ -67,8 +67,8 @@ public class Scientific_research_project_service_Impl implements Scientific_rese
      * @return
      */
     @Override
-    public int declare_edit(int id, String project_number, String project_name, String project_leader, String category, String subject, float budget, String start_date, String end_date, byte[] application_file, String approval_status) {
-        return scientific_research_project_dao.declare_edit(id, project_number,project_name,project_leader,category,subject,budget,start_date,end_date,application_file,approval_status);
+    public int declare_edit(int id, String project_number, String project_name, String project_leader, String category, String subject, float budget, String start_date, String end_date, byte[] application_file, String approval_status, String reporting_of_results) {
+        return scientific_research_project_dao.declare_edit(id, project_number,project_name,project_leader,category,subject,budget,start_date,end_date,application_file,approval_status,reporting_of_results);
     }
 
     /**

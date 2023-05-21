@@ -96,7 +96,12 @@
     </div>
 
     <div class="form-group">
+      <input type="text" name="reporting_of_results" value="成果汇报">
+    </div>
+
+    <div class="form-group">
       <input type="submit" value="提交申请">
+      <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_list">返回</a>
     </div>
   </form>
 </div>

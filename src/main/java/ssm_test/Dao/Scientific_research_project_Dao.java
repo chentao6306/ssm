@@ -14,8 +14,8 @@ public interface Scientific_research_project_Dao {
      * 科研项目申报 insert操作
      * @return
      */
-    @Insert("insert into research_projects values (null, #{project_number}, #{project_name}, #{project_leader}, #{category}, #{subject}, #{budget}, #{start_date}, #{end_date}, #{application_file}, #{approval_status})")
-    int declare(@Param("project_number") String project_number, @Param("project_name") String project_name, @Param("project_leader") String project_leader, @Param("category") String category, @Param("subject") String subject, @Param("budget") float budget, @Param("start_date") String start_date, @Param("end_date") String end_date, @Param("application_file") byte[] application_file, @Param("approval_status") String approval_status);
+    @Insert("insert into research_projects values (null, #{project_number}, #{project_name}, #{project_leader}, #{category}, #{subject}, #{budget}, #{start_date}, #{end_date}, #{application_file}, #{approval_status}, #{reporting_of_results})")
+    int declare(@Param("project_number") String project_number, @Param("project_name") String project_name, @Param("project_leader") String project_leader, @Param("category") String category, @Param("subject") String subject, @Param("budget") float budget, @Param("start_date") String start_date, @Param("end_date") String end_date, @Param("application_file") byte[] application_file, @Param("approval_status") String approval_status, @Param("reporting_of_results") String reporting_of_results);
 
     /**
      * 查询所有已经申报的数据  ---> 按照最早开始时间排序
@@ -48,8 +48,8 @@ public interface Scientific_research_project_Dao {
      * @return
      */
     @Update("update research_projects set project_number=#{project_number},project_name=#{project_name}," +
-            "project_leader=#{project_leader},category=#{category},subject=#{subject},budget=#{budget},start_date=#{start_date},end_date=#{end_date},application_file=#{application_file},approval_status=#{approval_status} where id=#{id}")
-    int declare_edit(@Param("id") int id, @Param("project_number") String project_number, @Param("project_name") String project_name, @Param("project_leader") String project_leader, @Param("category") String category, @Param("subject") String subject, @Param("budget") float budget, @Param("start_date") String start_date, @Param("end_date") String end_date, @Param("application_file") byte[] application_file, @Param("approval_status") String approval_status);
+            "project_leader=#{project_leader},category=#{category},subject=#{subject},budget=#{budget},start_date=#{start_date},end_date=#{end_date},application_file=#{application_file},approval_status=#{approval_status},reporting_of_results=#{reporting_of_results} where id=#{id}")
+    int declare_edit(@Param("id") int id, @Param("project_number") String project_number, @Param("project_name") String project_name, @Param("project_leader") String project_leader, @Param("category") String category, @Param("subject") String subject, @Param("budget") float budget, @Param("start_date") String start_date, @Param("end_date") String end_date, @Param("application_file") byte[] application_file, @Param("approval_status") String approval_status, @Param("reporting_of_results") String reporting_of_results);
 
     /**
      * 删除已申报的数据

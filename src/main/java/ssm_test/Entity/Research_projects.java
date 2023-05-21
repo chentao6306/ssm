@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class Research_projects {
     /**
+     * // 科研项目申报表
      * CREATE TABLE research_projects (
      *   id INT PRIMARY KEY AUTO_INCREMENT,
      *   project_number VARCHAR(50) NOT NULL,
@@ -17,21 +18,10 @@ public class Research_projects {
      *   budget DECIMAL(10, 2) NOT NULL,
      *   start_date DATE NOT NULL,
      *   end_date DATE NOT NULL,
-     *   application_file VARCHAR(255) NOT NULL
+     *   application_file LONGBLOB NOT NULL,
+     *   approval_status VARCHAR(5) NOT NULL,
+     *   reporting_of_results VARCHAR(255)
      * );
-     *
-     * 上述建表语句创建了一个名为research_projects的表，其中包含以下列：
-     *
-     * id: 作为主键的自增整数，用于唯一标识每个科研项目。
-     * project_number: 项目编号，存储为字符串类型，长度为50。
-     * project_name: 项目名称，存储为字符串类型，长度为100。
-     * project_leader: 项目负责人，存储为字符串类型，长度为100。
-     * category: 申请类别，存储为字符串类型，长度为20。
-     * subject: 学科分类，存储为字符串类型，长度为100。
-     * budget: 预算经费，存储为十进制数值类型，总共10位，其中2位为小数。
-     * start_date: 开始时间，存储为日期类型。
-     * end_date: 结束时间，存储为日期类型。
-     * application_file: 上传申请书的文件路径，存储为字符串类型，长度为255。
      */
     private int id;
 
@@ -64,6 +54,9 @@ public class Research_projects {
 
     // 项目审批状态
     private String approval_status;
+
+    // 成果汇报
+    private String reporting_of_results;
 
     public int getId() {
         return id;
@@ -151,5 +144,13 @@ public class Research_projects {
 
     public void setApproval_status(String approval_status) {
         this.approval_status = approval_status;
+    }
+
+    public String getReporting_of_results() {
+        return reporting_of_results;
+    }
+
+    public void setReporting_of_results(String reporting_of_results) {
+        this.reporting_of_results = reporting_of_results;
     }
 }
