@@ -68,4 +68,9 @@ public interface Scientific_research_project_Dao {
     @Select("select * from research_projects where project_name like CONCAT('%', #{project_name}, '%')")
     List<Research_projects> find_by_project_name_project(String project_name);
 
+
+    @Update("update research_projects set project_number=#{project_number},project_name=#{project_name}," +
+            "project_leader=#{project_leader},category=#{category},subject=#{subject},budget=#{budget},reporting_of_results=#{reporting_of_results},Patent_number=#{Patent_number} where id=#{id}")
+    int Patent_management_edit(@Param("id") int id, @Param("project_number") String project_number, @Param("project_name") String project_name, @Param("project_leader") String project_leader, @Param("category") String category, @Param("subject") String subject, @Param("budget") float budget, @Param("reporting_of_results") String reporting_of_results, @Param("Patent_number") String Patent_number);
+//                                  id,project_name,project_leader,category,subject,budget,reporting_of_results,Patent_number
 }

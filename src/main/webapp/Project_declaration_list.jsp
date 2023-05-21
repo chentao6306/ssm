@@ -208,6 +208,14 @@
   <!-- 用户管理功能 -->
   <section id="user-management">
     <h2>科研项目管理</h2>
+    <span>${declare_img_download_msg}</span>
+    <span>${edit_msg}</span>
+    <span>${delete_msg}</span>
+    <%
+      session.removeAttribute("declare_img_download_msg");
+      session.removeAttribute("edit_msg");
+      session.removeAttribute("delete_msg");
+    %>
     <!-- 用户管理相关内容 -->
     <table>
       <tr>

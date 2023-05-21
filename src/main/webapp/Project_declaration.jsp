@@ -100,9 +100,13 @@
     </div>
 
     <div class="form-group">
+      <span>${declare}</span>
       <input type="submit" value="提交申请">
       <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_list">返回</a>
     </div>
+    <%
+      session.removeAttribute("declare");
+    %>
   </form>
 </div>
 </body>

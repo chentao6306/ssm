@@ -44,8 +44,9 @@ public class UserController {
      * @return
      */
     @PostMapping("/login")
-    public String user_login(User user){
+    public String user_login(User user, HttpSession session){
         User user1 = userService.user_user_login(user);
+        session.setAttribute("user_role", user1.getRole());
 
         if (user1 == null){
             System.out.println("error");

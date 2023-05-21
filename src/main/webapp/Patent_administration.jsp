@@ -173,7 +173,7 @@
     <li>
       <a href="#">科研项目成果</a>
       <ul class="submenu">
-        <li><a href="#">专利管理</a></li>
+        <li><a href="${pageContext.request.contextPath}/Scientific_research_project/Patent_administration">专利管理</a></li>
         <li><a href="#">论文管理</a></li>
         <li><a href="#">著作权管理</a></li>
         <li><a href="#">奖项管理</a></li>
@@ -195,6 +195,11 @@
   <!-- 用户管理功能 -->
   <section id="user-management">
     <h2>专利管理</h2>
+    <span>${Patent_administration_edit_msg}</span>
+
+    <%
+      session.removeAttribute("Patent_administration_edit_msg");
+    %>
     <!-- 用户管理相关内容 -->
     <table>
       <tr>
@@ -221,8 +226,8 @@
           <td>${research_.reporting_of_results}</td>
           <td>${research_.patent_number}</td>
           <td>
-            <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_find_by_id?id=${research.id}" class="button">编辑</a>
-            <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_delete?id=${research.id}" class="button">删除</a>
+            <a href="${pageContext.request.contextPath}/Scientific_research_project/Patent_management_find_by_id?id=${research_.id}" class="button">编辑</a>
+<%--            <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_delete?id=${research.id}" class="button">删除</a>--%>
           </td>
         </tr>
       </c:forEach>

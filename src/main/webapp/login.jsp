@@ -78,8 +78,12 @@
         </div>
         <div class="form-group">
             <a href="register.jsp">注册</a>
+            <span>${login_msg}</span>
             <button type="submit">登录</button>
         </div>
+        <%
+            session.removeAttribute("login_msg");
+        %>
     </form>
 </div>
 </body>

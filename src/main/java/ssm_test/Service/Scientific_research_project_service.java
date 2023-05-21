@@ -57,4 +57,18 @@ public interface Scientific_research_project_service {
      * @return
      */
     List<Research_projects> find_by_project_name_project(String project_name);
+
+    /**
+     * 专利管理的修改
+     * @param id
+     * @param project_name
+     * @param project_leader
+     * @param category
+     * @param subject
+     * @param budget
+     * @param reporting_of_results
+     * @param Patent_number
+     * @return
+     */
+    int Patent_management_edit(int id, String project_number, String project_name, String project_leader, String category, String subject, float budget, String reporting_of_results, String Patent_number);
 }
