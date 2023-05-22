@@ -83,7 +83,7 @@
 </head>
 <body>
 <div class="container">
-    <h2>登录</h2>
+    <h2>研究生登录</h2>
     <form action="${pageContext.request.contextPath}/user/login" method="POST">
         <div class="form-group">
             <label for="account">账号:</label>
@@ -94,6 +94,8 @@
             <input type="password" id="password" name="password" required>
         </div>
         <div class="form-group">
+            <a href="teacher_login.jsp">教师登录</a>
+            <a href="admin_login.jsp">管理员登录</a>
             <a href="register.jsp">注册</a>
             <span>${login_msg}</span>
             <span>${register_msg}</span>
