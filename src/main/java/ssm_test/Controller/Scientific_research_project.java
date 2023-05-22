@@ -307,8 +307,4 @@ public class Scientific_research_project {
         }
     }
 
-
-
-
-
 }
