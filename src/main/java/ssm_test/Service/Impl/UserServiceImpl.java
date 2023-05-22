@@ -15,25 +15,38 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private Userdao userdao;
 
-    // 添加用户方法
+    /**
+     * 用户注册
+     * @param user
+     * @return
+     */
     @Override
     public int user_register(User user) {
-        System.out.println("haha");
         return userdao.user_register(user);
 
     }
 
+    /**
+     * 查询所有用户
+     * @return
+     */
     @Override
     public List<User> user_all() {
         return userdao.user_all();
     }
 
+    /**
+     * 用户登录
+     * @param user
+     * @return
+     */
     @Override
-    public User user_user_login(User user) {
+    public User user_login(User user) {
         return userdao.user_login(user);
     }
 
     /**
+     * 删除用户
      * @param id
      * @return
      */
@@ -63,7 +76,7 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 按帐户查找用户
+     * 按账号查找用户
      * @param account
      * @return
      */

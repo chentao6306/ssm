@@ -42,8 +42,7 @@ public class Scientific_research_project_service_Impl implements Scientific_rese
 
     /**
      * 根据id查询已经申报的项目
-     *
-     * @param research_projects
+     * @param id
      * @return
      */
     @Override

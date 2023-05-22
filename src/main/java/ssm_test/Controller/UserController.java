@@ -45,13 +45,13 @@ public class UserController {
      */
     @PostMapping("/login")
     public String user_login(User user, HttpSession session){
-        User user1 = userService.user_user_login(user);
-        session.setAttribute("user_role", user1.getRole());
+        User user1 = userService.user_login(user);
 
         if (user1 == null){
-            System.out.println("error");
-            return "error";
+            session.setAttribute("login_msg","账号或密码错误!");
+            return "redirect:/login.jsp";
         } else {
+            session.setAttribute("user_role", user1.getRole());
 //            System.out.println("login ok");
             return "redirect:/user/";
         }
@@ -64,11 +64,11 @@ public class UserController {
      * @return
      */
     @PostMapping("/register")
-    public String user_register(User user){
+    public String user_register(User user, HttpSession session){
 
         int user_register = userService.user_register(user);
         if (user_register >= 1){
-//            System.out.println("注册成功");
+            session.setAttribute("register_msg","注册成功 请登录!");
             return "redirect:/login.jsp";
         } else {
             System.out.println("注册失败");

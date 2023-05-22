@@ -8,7 +8,7 @@ import java.util.List;
 public interface UserService {
     int user_register(User user);
 
-    User user_user_login(User user);
+    User user_login(User user);
 
     List<User> user_all();
 
