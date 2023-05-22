@@ -168,19 +168,12 @@
             <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_list">科研项目</a>
             <ul class="submenu">
                 <li><a href="Project_declaration.jsp">申报</a></li>
-                <%--        <li><a href="#">审核</a></li>--%>
-                <%--        <li><a href="#">合同签订</a></li>--%>
-                <%--        <li><a href="#">经费管理</a></li>--%>
-                <li><a href="#">成果汇报</a></li>
             </ul>
         </li>
         <li>
             <a href="#">科研项目成果</a>
             <ul class="submenu">
                 <li><a href="Patent_administration.jsp">专利管理</a></li>
-                <li><a href="#">论文管理</a></li>
-                <li><a href="#">著作权管理</a></li>
-                <li><a href="#">奖项管理</a></li>
             </ul>
         </li>
     </ul>

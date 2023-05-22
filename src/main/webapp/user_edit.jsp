@@ -90,7 +90,6 @@
     </div>
     <div class="form-group">
       <input type="submit" value="保存" class="button">
-<%--      <input type="reset" value="重置" class="button">--%>
       <a href="${pageContext.request.contextPath}/user/">返回</a>
     </div>
   </form>

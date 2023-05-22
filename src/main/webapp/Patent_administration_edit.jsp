@@ -81,23 +81,6 @@
             <label for="budget">预算经费:</label>
             <input type="text" id="budget" name="budget" value="${by_id_research_projects.budget}" required>
         </div>
-<%--        <div class="form-group">--%>
-<%--            <label for="start_date">开始时间:</label>--%>
-<%--            <input type="date" id="start_date" name="start_date" value="${by_id_research_projects.start_date}" required>--%>
-<%--        </div>--%>
-<%--        <div class="form-group">--%>
-<%--            <label for="end_date">结束时间:</label>--%>
-<%--            <input type="date" id="end_date" name="end_date" value="${by_id_research_projects.end_date}" required>--%>
-<%--        </div>--%>
-<%--        <div class="form-group">--%>
-<%--            <label for="application_file">上传申请书:</label>--%>
-<%--            <input type="file" id="application_file" name="application_file" value="${by_id_research_projects.application_file}" required>--%>
-<%--        </div>--%>
-
-<%--        <div class="form-group">--%>
-<%--            <label for="approval_status">审批状态:</label>--%>
-<%--            <input type="text" name="approval_status" value="${by_id_research_projects.approval_status}">--%>
-<%--        </div>--%>
 
         <div class="form-group">
             <label for="reporting_of_results">成果汇报:</label>

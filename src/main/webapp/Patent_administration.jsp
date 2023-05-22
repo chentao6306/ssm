@@ -174,9 +174,6 @@
       <a href="#">科研项目成果</a>
       <ul class="submenu">
         <li><a href="${pageContext.request.contextPath}/Scientific_research_project/Patent_administration">专利管理</a></li>
-<%--        <li><a href="#">论文管理</a></li>--%>
-<%--        <li><a href="#">著作权管理</a></li>--%>
-<%--        <li><a href="#">奖项管理</a></li>--%>
       </ul>
     </li>
   </ul>
