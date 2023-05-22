@@ -201,13 +201,34 @@
                     <td>${user.role}</td>
                     <td>
                         <a href="${pageContext.request.contextPath}/user/select?id=${user.id}" class="button">编辑</a>
-                        <a class="button" href="${pageContext.request.contextPath}/user/delete?id=${user.id}">删除</a>
+                        <a class="button" href="${pageContext.request.contextPath}/user/delete?id=${user.id}" onclick="confirmDelete(event) ">删除</a>
                     </td>
                 </tr>
             </c:forEach>
 
             <!-- 更多用户行 -->
         </table>
+
+        <script type="text/javascript">
+            function confirmDelete(event) {
+                // 阻止默认的链接点击行为
+                event.preventDefault();
+
+                // 弹出确认对话框
+                var result = confirm("确定要删除吗？");
+
+                // 根据用户的选择执行相应操作
+                if (result) {
+                    // 用户点击了确认，执行删除操作
+                    var deleteUrl = event.target.href;
+                    window.location.href = deleteUrl;
+                } else {
+                    // 用户点击了取消，不执行任何操作
+                    return false;
+                }
+            }
+        </script>
+
     </section>
 
 

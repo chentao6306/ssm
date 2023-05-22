@@ -12,14 +12,17 @@
     <title>注册页面</title>
     <style>
         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
         }
 
         .container {
             max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 60px;
             background-color: #ffffff;
             border: 1px solid #e6e6e6;
             border-radius: 5px;
@@ -100,7 +103,6 @@
             <span class="role-label">研究生</span>
             <input type="radio" id="role-admin" name="role" value="管理员" class="role-option" required>
             <span class="role-label">管理员</span>
-
         </div>
         <div class="form-group">
             <button type="submit">注册</button>

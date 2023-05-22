@@ -12,14 +12,17 @@
     <title>登录页面</title>
     <style>
         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
         }
 
         .container {
             max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 60px;
             background-color: #ffffff;
             border: 1px solid #e6e6e6;
             border-radius: 5px;
@@ -42,11 +45,25 @@
         }
 
         .form-group input[type="text"],
-        .form-group input[type="password"] {
+        .form-group input[type="password"],
+        .form-group select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+        }
+
+        .form-group select {
+            height: 36px;
+        }
+
+        .form-group .role-label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .form-group .role-option {
+            margin-right: 5px;
         }
 
         .form-group button {
