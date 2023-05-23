@@ -31,7 +31,6 @@ public class Scientific_research_project {
 
     @Autowired
     private Scientific_research_project_service scientific_research_project_service;
-
     /**
      * 科研项目申报操作
      * @param project_number
@@ -255,6 +254,24 @@ public class Scientific_research_project {
         modelAndView.addObject("research_projects", research_projects); // 设置数据到ModelAndView对象
 
         return modelAndView;
+    }
+
+    /**
+     * 专利管理搜索
+     * @param project_name
+     * @return
+     */
+    @GetMapping("/Patent_administration_select")
+    public ModelAndView Patent_administration_select(String project_name) throws UnsupportedEncodingException {
+        project_name = new String(project_name.getBytes("ISO-8859-1"), "UTF-8");
+
+        List<Research_projects> by_project_name_project_ = scientific_research_project_service.find_by_project_name_project(project_name);
+
+        ModelAndView modelAndView = new ModelAndView("/Patent_administration_select.jsp");
+
+        modelAndView.addObject("by_project_name_project_", by_project_name_project_);
+        return modelAndView;
+
     }
 
     /**

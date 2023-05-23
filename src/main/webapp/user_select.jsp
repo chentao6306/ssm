@@ -170,6 +170,8 @@
                 <li><a href="${pageContext.request.contextPath}/Scientific_research_project/Patent_administration">专利管理</a></li>
             </ul>
         </li>
+        <li><a href="${pageContext.request.contextPath}/login.jsp">登录</a></li>
+        <li><a href="${pageContext.request.contextPath}/register.jsp">注册</a></li>
     </ul>
 </nav>
 

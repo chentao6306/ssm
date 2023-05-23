@@ -185,6 +185,8 @@
         <li><a href="${pageContext.request.contextPath}/Scientific_research_project/Patent_administration">专利管理</a></li>
       </ul>
     </li>
+    <li><a href="${pageContext.request.contextPath}/login.jsp">登录</a></li>
+    <li><a href="${pageContext.request.contextPath}/register.jsp">注册</a></li>
   </ul>
 </nav>
 
@@ -247,7 +249,7 @@
           <td>
             <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_find_by_id?id=${research.id}" class="button">编辑</a>
             <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_delete?id=${research.id}" onclick="confirmDelete(event)" class="button">删除</a>
-<%--            <a class="button">成果汇报</a>--%>
+              <%--            <a class="button">成果汇报</a>--%>
           </td>
         </tr>
       </c:forEach>

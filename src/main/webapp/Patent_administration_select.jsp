@@ -1,11 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: 27757
-  Date: 2023/5/21
-  Time: 9:11
+  Date: 2023/5/23
+  Time: 12:57
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -187,6 +187,7 @@
   <form action="${pageContext.request.contextPath}/Scientific_research_project/Patent_administration_select" method="GET">
     <input type="text" name="project_name" placeholder="输入项目名称进行搜索">
     <input type="submit" value="搜索">
+    <a href="${pageContext.request.contextPath}/Scientific_research_project/Patent_administration" type="submit" >返回主页</a>
   </form>
 </div>
 
@@ -213,7 +214,7 @@
         <th>专利号</th>
         <th>操作</th>
       </tr>
-      <c:forEach items="${research_projects}" var="research_" varStatus="s">
+      <c:forEach items="${by_project_name_project_}" var="research_" varStatus="s">
         <tr>
           <td>${research_.id}</td>
           <td>${research_.project_number}</td>
@@ -226,7 +227,7 @@
           <td>${research_.patent_number}</td>
           <td>
             <a href="${pageContext.request.contextPath}/Scientific_research_project/Patent_management_find_by_id?id=${research_.id}" class="button">编辑</a>
-<%--            <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_delete?id=${research.id}" class="button">删除</a>--%>
+              <%--            <a href="${pageContext.request.contextPath}/Scientific_research_project/declare_delete?id=${research.id}" class="button">删除</a>--%>
           </td>
         </tr>
       </c:forEach>
