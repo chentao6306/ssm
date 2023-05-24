@@ -5,7 +5,6 @@ import ssm_test.Entity.Research_projects;
 
 import java.util.List;
 
-
 /**
  * 科研项目的相关操作的dao层(面向数据库)
  */
@@ -72,5 +71,4 @@ public interface Scientific_research_project_Dao {
     @Update("update research_projects set project_number=#{project_number},project_name=#{project_name}," +
             "project_leader=#{project_leader},category=#{category},subject=#{subject},budget=#{budget},reporting_of_results=#{reporting_of_results},Patent_number=#{Patent_number} where id=#{id}")
     int Patent_management_edit(@Param("id") int id, @Param("project_number") String project_number, @Param("project_name") String project_name, @Param("project_leader") String project_leader, @Param("category") String category, @Param("subject") String subject, @Param("budget") float budget, @Param("reporting_of_results") String reporting_of_results, @Param("Patent_number") String Patent_number);
-//                                  id,project_name,project_leader,category,subject,budget,reporting_of_results,Patent_number
 }

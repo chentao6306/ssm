@@ -6,23 +6,6 @@ import java.util.Date;
  * 科研项目申报的实体类字段
  */
 public class Research_projects {
-    /**
-     * CREATE TABLE research_projects (
-     *   id INT PRIMARY KEY AUTO_INCREMENT,
-     *   project_number VARCHAR(50) NOT NULL,
-     *   project_name VARCHAR(100) NOT NULL,
-     *   project_leader VARCHAR(100) NOT NULL,
-     *   category VARCHAR(20) NOT NULL,
-     *   subject VARCHAR(100) NOT NULL,
-     *   budget DECIMAL(10, 2) NOT NULL,
-     *   start_date DATE NOT NULL,
-     *   end_date DATE NOT NULL,
-     *   application_file LONGBLOB NOT NULL,
-     *   approval_status VARCHAR(5) NOT NULL,
-     *   Patent_number VARCHAR(100),
-     *   reporting_of_results VARCHAR(255)
-     * );
-     */
     private int id;
 
     // 项目编号

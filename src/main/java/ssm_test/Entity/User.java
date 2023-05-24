@@ -4,16 +4,6 @@ package ssm_test.Entity;
  * 用户实体类
  */
 public class User {
-    /**
-     * 用户表
-     * CREATE TABLE `user` (
-     *   `id` int(11) NOT NULL AUTO_INCREMENT,
-     *   `account` varchar(255) NOT NULL,
-     *   `password` varchar(255) NOT NULL,
-     *   `role` varchar(25) NOT NULL,
-     *   PRIMARY KEY (`id`)
-     * )
-     */
     //id
     private int id;
 

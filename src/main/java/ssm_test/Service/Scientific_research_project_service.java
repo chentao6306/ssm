@@ -71,4 +71,5 @@ public interface Scientific_research_project_service {
      * @return
      */
     int Patent_management_edit(int id, String project_number, String project_name, String project_leader, String category, String subject, float budget, String reporting_of_results, String Patent_number);
+
 }

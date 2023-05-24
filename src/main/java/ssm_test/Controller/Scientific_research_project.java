@@ -22,6 +22,7 @@ import java.util.Base64;
 import java.util.List;
 
 
+
 /**
  * 科研项目的相关操作 (申报、审核、合同签订、经费管理、成果汇报)等操作
  */
@@ -175,7 +176,6 @@ public class Scientific_research_project {
 
             int i = scientific_research_project_service.declare_edit(id,project_number, project_name, project_leader, category, subject, budget, start_date, end_date, application_file_byte, approval_status,reporting_of_results);
             if (i >= 1){
-//                System.out.println("修改申报成功");
                 return "redirect:/Scientific_research_project/declare_list";
             } else {
                 System.out.println("修改申报失败");
@@ -201,7 +201,6 @@ public class Scientific_research_project {
 
             int declare_delete = scientific_research_project_service.declare_delete(id);
             if (declare_delete >= 1){
-//            System.out.println("删除成功");
                 return "redirect:/Scientific_research_project/declare_list";
             } else {
                 System.out.println("删除失败");
@@ -230,17 +229,7 @@ public class Scientific_research_project {
         return "redirect:/Project_declaration_select.jsp";
     }
 
-    /**
-     * 成果汇报
-     * @param
-     * @return
-     */
-    @GetMapping("/Reporting_on_results")
-    public String Reporting_on_results(int id){
-        Research_projects by_id_research_projects = scientific_research_project_service.find_by_id_research_projects(id);
 
-        return null;
-    }
 
     /**
      * 专利管理
@@ -316,7 +305,6 @@ public class Scientific_research_project {
     public String Patent_management_edit(@RequestParam("id") int id, @RequestParam("project_number") String project_number, @RequestParam("project_name") String project_name, @RequestParam("project_leader") String project_leader, @RequestParam("category") String category, @RequestParam("subject") String subject, @RequestParam("budget") float budget, @RequestParam("reporting_of_results") String reporting_of_results, @RequestParam("Patent_number") String Patent_number){
         int i = scientific_research_project_service.Patent_management_edit(id, project_number, project_name, project_leader, category, subject, budget, reporting_of_results, Patent_number);
         if (i >= 1){
-//            System.out.println("修改专利成功");
             return "redirect:/Scientific_research_project/Patent_administration";
         } else {
             System.out.println("修改专利失败");

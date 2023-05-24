@@ -62,6 +62,4 @@ public interface Userdao {
      */
     @Select("select * from user where account=#{account}")
     User find_user_by_account(String account);
-
-
 }

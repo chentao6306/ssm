@@ -13,16 +13,6 @@
     <!-- 2.静态资源默认servlet配置-->
     <mvc:default-servlet-handler/>
 
-<!--    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
-<!--        &lt;!&ndash;上传文件总大小, 单位为 字节&ndash;&gt;-->
-<!--        <property name="maxUploadSize" value="5242800"/>-->
-<!--        &lt;!&ndash;上传单个文件的大小, 单位为 字节&ndash;&gt;-->
-<!--        <property name="maxUploadSizePerFile" value="5242800"/>-->
-<!--        &lt;!&ndash; 设置请求的编码格式, 默认为iso-8859-1 &ndash;&gt;-->
-<!--        <property name="defaultEncoding" value="utf-8"/>-->
-<!--        &lt;!&ndash; 设置上传文件的临时路径 &ndash;&gt;-->
-<!--&lt;!&ndash;        <property name="uploadTempDir" value="upload/temp"/>&ndash;&gt;-->
-<!--    </bean>-->
 
     <!-- 配置Multipart解析器 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
